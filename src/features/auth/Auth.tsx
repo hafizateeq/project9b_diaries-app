@@ -8,13 +8,13 @@ import { setUser } from './userSlice';
 import { AuthResponse } from '../../services/mirage/routes/user';
 import { useAppDispatch } from '../../store';
 
-const schema = Yup.object().shape({
-  username: Yup.string()
-    .required('What? No username?')
-    .max(16, 'Username cannot be longer than 16 characters'),
-  password: Yup.string().required('Without a password, "None shall pass!"'),
-  email: Yup.string().email('Please provide a valid email address (abc@xy.z)'),
-});
+// const schema = Yup.object().shape({
+//   username: Yup.string()
+//     .required('What? No username?')
+//     .max(16, 'Username cannot be longer than 16 characters'),
+//   password: Yup.string().required('Without a password, "None shall pass!"'),
+//   email: Yup.string().email('Please provide a valid email address (abc@xy.z)'),
+// });
 const Auth: FC = () => {
   const { handleSubmit, register, formState: { errors } } = useForm<User>();
   const [isLogin, setIsLogin] = useState(true);
